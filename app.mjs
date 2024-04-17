@@ -2,7 +2,7 @@ import { SpotifyApi } from "https://esm.sh/@spotify/web-api-ts-sdk@1.2.0?bundle-
 
 const api = SpotifyApi.withUserAuthorization(
   "e6d9b0ee602e45eeae9dad4e737b4fd8",
-  "https://localhost:3000",
+  "https://git.macropus.org/lollapalooza-2024/",
 );
 
 const artists = document.querySelectorAll("li");
