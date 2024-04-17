@@ -9,7 +9,6 @@ const artists = document.querySelectorAll("li");
 const player = document.querySelector("iframe");
 
 for (const element of artists) {
-  element.style.cursor = "pointer";
   element.addEventListener("click", async () => {
     const result = await api.search(
       `artist:${element.textContent}}`,
@@ -20,9 +19,11 @@ for (const element of artists) {
     const [album] = result.albums.items.sort((a, b) =>
       a.release_date < b.release_date ? 1 : -1,
     );
-    player.src = album.external_urls.spotify.replace(
-      "open.spotify.com",
-      "open.spotify.com/embed",
-    );
+    if (album) {
+      player.src = album.external_urls.spotify.replace(
+        "open.spotify.com",
+        "open.spotify.com/embed",
+      );
+    }
   });
 }
