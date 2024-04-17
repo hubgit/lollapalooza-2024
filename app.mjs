@@ -11,7 +11,7 @@ const player = document.querySelector("iframe");
 for (const element of artists) {
   element.addEventListener("click", async () => {
     const result = await api.search(
-      `artist:${element.textContent}}`,
+      `artist:${element.textContent}`,
       ["album"],
       "GB",
       10,
